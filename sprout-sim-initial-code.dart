@@ -219,12 +219,32 @@ class _GameScreenState extends State<GameScreen> {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
 
                 // Inline Meters (Water & Fertilizer) - only visible when a plant is active
-                Text("Water %",
-                    style: TextStyle(color: Colors.white70, fontSize: 12),
+                Text(
+                  "Water %",
+                  style: TextStyle(color: Colors.white70, fontSize: 12),
                 ),
+                Container(
+                  width: 130,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white24),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  alignment: Alignment.centerLeft,
+                  child: FractionallySizedBox(
+                    widthFactor: 30 / 100,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.orangeAccent,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
               ],
             ),
 
