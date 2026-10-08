@@ -1,0 +1,33 @@
+
+void _ballsLocation(Size screenSize) {
+  const double ballSize = 50.0;
+
+  // Ensure bounds are non-negative and have some offsets
+  final double maxX = max(20, screenSize.width - ballSize);
+  final double maxY = max(120, screenSize.height - ballSize);
+
+  setState(() {
+    _goldX = _random.nextDouble() * maxX;
+    _goldY = _random.nextDouble() * maxY;
+
+    // re generate if overlapping
+    do {
+      _redX = _random.nextDouble() * maxX;
+      _redY = _random.nextDouble() * maxY;
+    } while ((_goldX - _redX).abs() < ballSize && (_goldY - _redY).abs() < ballSize);
+  });
+}
+
+
+//	Checking if correct taping on Golden ONE
+
+if (!_isPlaying) return;
+
+    double x = tapPosition.dx;
+    double y = tapPosition.dy;
+
+    // Check if tap on Golden Ball's box
+    bool tappedGold = x >= _goldX && 
+                      x <= (_goldX + _ballSize) && 
+                      y >= _goldY && 
+                      y <= (_goldY + _ballSize);
