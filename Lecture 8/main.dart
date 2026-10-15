@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lec3_neaon_pulse/parts/info_widget.dart';
+import 'parts/stat_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,101 +26,32 @@ class DashboardScreen extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       child: Column(
         children: [
-          Card(
-            elevation: 2,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Icon(
-                      Icons.directions_walk,
-                      size: 50,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Daily Steps",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "2,308 steps",
-                        style: TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
+          StatWidget(
+            icon: Icons.directions_walk,
+            title: "Step count",
+            value: "2033 steps",
+            color: Colors.blue,
+          ),
+          StatWidget(
+            icon: Icons.local_fire_department,
+            title: "Calories burned",
+            value: "800 kcal",
+            color: Colors.red,
           ),
           SizedBox(
             height: 10,
           ),
           Row(
             children: [
-              Card(
-                elevation: 2,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                color: Colors.green.withAlpha(30),
-                child: Padding(
-                  padding: EdgeInsets.all(30),
-                  child: Column(
-                    children: [
-                      Text(
-                        "1K+",
-                        style: const TextStyle(
-                            color: Colors.green,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        "Posts",
-                        style: const TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              InfoWidget(
+                title: "10K+",
+                subtitle: "Top of people",
+                color: Colors.purple,
               ),
-
-              Card(
-                elevation: 2,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                color: Colors.purple.withAlpha(30),
-                child: Padding(
-                  padding: EdgeInsets.all(30),
-                  child: Column(
-                    children: [
-                      Text(
-                        "10",
-                        style: const TextStyle(
-                            color: Colors.purple,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        "Top of people",
-                        style: const TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              InfoWidget(
+                title: "500K+",
+                subtitle: "Top of people",
+                color: Colors.blue,
               ),
             ],
           )
