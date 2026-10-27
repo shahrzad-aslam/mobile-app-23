@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lec3_neaon_pulse/core/app_router.dart';
-import 'package:lec3_neaon_pulse/screens/game.dart';
-import 'package:lec3_neaon_pulse/screens/splash.dart';
+import '../screens/game.dart';
+import '../screens/splash.dart';
 
 
 void main() {

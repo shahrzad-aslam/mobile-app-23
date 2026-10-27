@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lec3_neaon_pulse/core/app_router.dart';
+import '../core/app_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void dispose() {
+    super.dispose();
     _timer?.cancel(); 
   }
 
@@ -46,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _navigateToHome() {
     if (mounted) {
-      // navigate
+      context.replace(PageNames.userInput);
     }
   }
 

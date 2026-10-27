@@ -1,5 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../core/app_router.dart';
 
 class GameScreen extends StatefulWidget {
   GameScreen({super.key});
@@ -15,18 +17,19 @@ class _GameScreenState extends State<GameScreen> {
   int _water = 50;         
   int _fertilizer = 50;    
   int _heat = 35;          
-  int _coins = 0;
-
-  String _username = 'Ali';         
+  int _coins = 0;        
 
   bool _hasPests = false;
   bool _isRotting = false;
   bool _isAlive = true;
 
+  String _username = 'Ali';
+
   String _message = "Welcome! Tap 'Plant Seed' to start your ecosystem.";
   final Random _random = Random();
 
   void _endGame() {
+    context.go(PageNames.endGame);
     // END Game
   }
 
@@ -190,7 +193,7 @@ class _GameScreenState extends State<GameScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Hello $_username"),
+                  Text("Hello $_username", style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                   Row(
                     children: [
                       const Icon(Icons.wb_sunny, color: Colors.orangeAccent, size: 18),
